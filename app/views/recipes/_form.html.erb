@@ -1,0 +1,6 @@
+<p><label for="name">Recipe Name</label>
+<input type="text" id="name" name="recipe[name]"  value="<%= @recipe.name %>"></p>
+<p><label for="created_by">Created By</label>
+<input type="text" id="created_by" name="recipe[created_by]" value="<%= @recipe.created_by %>"></p>
+<p><label for="content">Recipe Content</label>
+<textarea name="recipe[content]" rows="10" cols="60"><%= @recipe.content %></textarea></p>

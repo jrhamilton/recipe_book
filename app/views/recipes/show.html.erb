@@ -1,0 +1,27 @@
+
+<% content_for(:title, " #{@recipe.name} | Recipes of Portland ") %>
+<h2><%= @recipe.name %></h2>
+<h4>Created By: <i><%= @recipe.created_by %></i></h4>
+
+<p>Recipe:</p>
+<p><%= @recipe.content.html_safe %></p>
+
+
+<% if @recipe.tags.length > 0 %>
+  <p>Tags:</p>
+  <ul>
+    <% @recipe.tags.each do |tag| %>
+      <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<a href="/recipes/<%= @recipe.id %>/add_tag">
+  <button>Add Tags</button></a><br>
+<a href="/recipes/<%= @recipe.id %>/edit">
+  <button>Edit Recipe</button></a><br>
+<a href="/recipes/<%= @recipe.id %>"
+      data-method="delete"
+      data-confirm="are you sure?"
+      rel='nofollow'>
+      <button>Delete Recipe</button></a>

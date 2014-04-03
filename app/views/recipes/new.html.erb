@@ -1,0 +1,10 @@
+<% content_for(:title, " New Recipe | Recipes of Portland ") %>
+
+<h2>Create your new recipe</h2>
+
+<%= render('layouts/errors', :object => @recipe) %>
+
+<form method="post" action="/recipes/new">
+  <%= render('form') %>
+  <button>Submit Your Recipe</button>
+</form>
