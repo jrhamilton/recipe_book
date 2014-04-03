@@ -3,8 +3,25 @@
 
 <ul>
   <% @tags.each do |tag| %>
-    <li><a href="tags/<%= tag.id %>"><%= tag.name %></li>
+    <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+      <ul>
+        <li><a href="/tags/<%= tag.id %>/edit">Edit</a></li>
+        <li><a href="/tags/<%= tag.id %>"
+                data-method="delete"
+                data-confirm="you sure?"
+                rel="nofollow">Delete</a></li>
+      </ul>
+
+    </li>
   <% end %>
 </ul>
+
+<%= render('layouts/errors', :object => @tag) %>
+
+<form action="/tags" method="post">
+  <label for="tag_name">New Tag Name:</label><br>
+  <input id="tag_name" name="tag[name]" type="text">
+  <button>Add Tag</button>
+</form>
 
 <p><a href="/recipes">Return to all recipes</a></p>

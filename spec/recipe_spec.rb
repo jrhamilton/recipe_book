@@ -16,4 +16,6 @@ describe Recipe do
 
   it { should validate_uniqueness_of(:name).scoped_to(:created_by)}
 
+  it { should have_many :ratings }
+
 end

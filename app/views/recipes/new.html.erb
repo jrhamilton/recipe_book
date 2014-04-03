@@ -6,5 +6,13 @@
 
 <form method="post" action="/recipes/new">
   <%= render('form') %>
+  <div class="checkbox" id="tags">
+    <label for="tags">
+      Check all tags associated with your recipe</label><br />
+    <% Tag.all.each do |tag| %>
+      <span><input type="checkbox" name="tags[]"
+        value="<%= tag.id %>"> <%= tag.name %></span><br />
+    <% end %>
+  </div>
   <button>Submit Your Recipe</button>
 </form>

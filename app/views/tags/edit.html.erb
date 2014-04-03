@@ -1,0 +1,10 @@
+<h2>Edit <%= @tag.name %></h2>
+
+<%= render('layouts/errors', :object => @tag) %>
+
+<form action="/tags/<%= @tag.id %>/edit" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for="tag_name">Update Tag Name:</label><br>
+  <input id="tag_name" name="tag[name]" type="text" value="<%= @tag.name %>">
+  <button>Update Tag</button>
+</form>

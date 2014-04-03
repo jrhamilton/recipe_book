@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-
     render('recipes/new.html.erb')
   end
 
@@ -16,6 +15,11 @@ class RecipesController < ApplicationController
     if !@recipe.save
       render('recipes/new.html.erb')
     else
+      if !params[:tags].nil?
+        params[:tags].each do |number|
+          @recipe.tags << Tag.find(number.to_i)
+        end
+      end
       redirect_to("/recipes/#{@recipe.id}")
     end
   end

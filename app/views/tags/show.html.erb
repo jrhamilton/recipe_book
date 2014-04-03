@@ -7,5 +7,18 @@
   <% end %>
 </ul>
 
+<h3>Add Recipes to this tag?</h3>
+<form method="post" action="/tags/<%= @tag.id %>">
+  <div class="checkbox" id="recipes">
+    <label for="recipes">
+      Check all recipes associated with <%= @tag.name %></label><br />
+    <% @recipes.each do |recipe| %>
+      <span><input type="checkbox" name="recipes[]"
+        value="<%= recipe.id %>"> <%= recipe.name %></span><br />
+    <% end %>
+  </div>
+  <button>Submit New Recipes</button>
+</form>
+
 <p><a href="/tags">Return to all tags</a></p>
 <p><a href="/recipes">Return to all recipes</a></p>

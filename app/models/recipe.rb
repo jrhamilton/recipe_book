@@ -6,5 +6,6 @@ class Recipe < ActiveRecord::Base
   validates_uniqueness_of :name, :scope => :created_by
 
   has_and_belongs_to_many :tags
+  has_many :ratings
 
 end
