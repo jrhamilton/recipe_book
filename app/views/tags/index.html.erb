@@ -1,0 +1,10 @@
+<h1>Here are the Tags for our recipes</h1>
+<h2>Choose a tag to see associated recipes or create a new one</h2>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li><a href="tags/<%= tag.id %>"><%= tag.name %></li>
+  <% end %>
+</ul>
+
+<p><a href="/recipes">Return to all recipes</a></p>
