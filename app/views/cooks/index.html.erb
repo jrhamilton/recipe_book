@@ -1,0 +1,9 @@
+<h1>Cooks!</h1>
+
+<ul>
+  <% @cooks.each do |cook| %>
+    <li><a href="/cooks/<%= cook.id %>"><%= cook.name %></a></li>
+  <% end %>
+</ul>
+
+<p><a href="/cooks/new">Add New Cook</a></p>

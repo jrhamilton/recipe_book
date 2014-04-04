@@ -13,8 +13,10 @@
     <label for="recipes">
       Check all recipes associated with <%= @tag.name %></label><br />
     <% @recipes.each do |recipe| %>
-      <span><input type="checkbox" name="recipes[]"
-        value="<%= recipe.id %>"> <%= recipe.name %></span><br />
+      <span>
+        <input type="checkbox" name="recipes[]"
+        value="<%= recipe.id %>"> <%= recipe.name %>
+      </span><br />
     <% end %>
   </div>
   <button>Submit New Recipes</button>

@@ -15,4 +15,9 @@ RecipeBook::Application.routes.draw do
   match('tags/:id/edit', {:via => [:patch, :put], :to => 'tags#update'})
   match('tags/:id', {:via => :delete, :to => 'tags#destroy'})
   match('tags/:id', {:via => :post, :to => 'tags#update'})
+
+  match('cooks', {:via => :get, :to => 'cooks#index'})
+  match('cooks/new', {:via => :get, :to => 'cooks#new'})
+  match('cooks/new', {:via => :post, :to => 'cooks#create'})
+  match('cooks/:id', {:via => :get, :to => 'cooks#show'})
 end

@@ -1,0 +1,10 @@
+<h2>New Cook</h2>
+
+<%= render('layouts/errors', :object => @cook) %>
+
+<form method="post" action="/cooks/new">
+  <label for="cook_name">Name</label>
+  <input id="cook_name" name="cook[name]" type='text' value="<%=@cook.name%>">
+  <button>Add Cook</button>
+
+</form>
